@@ -1,0 +1,27 @@
+require 'rake'
+require 'parallel'
+require 'rspec/core/rake_task'
+
+RSpec::Core::RakeTask.new(:all_tests) do |t|
+  ENV['CONFIG_NAME'] ||= "all_tests"
+  t.pattern = Dir.glob('spec/')
+  t.rspec_opts = '--format documentation'
+  t.verbose = false
+end
+
+task :default => :all_tests
+
+task :parallel do |t, args|
+  @num_parallel = 10
+
+  Parallel.map([*1..@num_parallel], :in_processes => @num_parallel) do |task_id|
+    ENV["TASK_ID"] = (task_id - 1).to_s
+    ENV['CONFIG_NAME'] = "parallel"
+
+    Rake::Task["all_tests"].invoke
+  end
+end
+
+task :test do |t, args|
+  Rake::Task["all_tests"].invoke
+end

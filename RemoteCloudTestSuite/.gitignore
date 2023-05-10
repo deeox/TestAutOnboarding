@@ -1,0 +1,3 @@
+local.log
+config/*
+!config/parallel.config.yml.sample

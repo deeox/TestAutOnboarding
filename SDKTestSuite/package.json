@@ -1,0 +1,34 @@
+{
+  "name": "mocha-browserstack",
+  "version": "0.0.1",
+  "description": " Selenium examples for Mocha and BrowserStack Automate",
+  "scripts": {
+    "sample-test": "browserstack-node-sdk mocha test/sample_test.js --timeout=60000",
+    "sample-local-test": "browserstack-node-sdk mocha test/sample_local_test.js --timeout=60000",
+    "postinstall": "npm update browserstack-node-sdk"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/browserstack/mocha-browserstack.git"
+  },
+  "keywords": [
+    "mocha",
+    "browserstack",
+    "selenium",
+    "automate",
+    "examples"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/browserstack/mocha-browserstack/issues"
+  },
+  "homepage": "https://github.com/browserstack/mocha-browserstack#readme",
+  "dependencies": {
+    "browserstack-local": "^1.4.8",
+    "mocha": "^9.2.2",
+    "selenium-webdriver": "4.1.2"
+  },
+  "devDependencies": {
+    "browserstack-node-sdk": "latest"
+  }
+}
