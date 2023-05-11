@@ -1,5 +1,5 @@
-userName: deepaktejaswi_gDv3RF
-accessKey: xruDiUApeC8NWNEKak51
+userName: <USER_NAME>
+accessKey: <ACCESS_KEY>
 platforms:
   - os: Windows
     osVersion: 11

@@ -7,3 +7,4 @@ browserstack.err
 .vscode/
 .env
 package-lock.json
+browserstack.yml
